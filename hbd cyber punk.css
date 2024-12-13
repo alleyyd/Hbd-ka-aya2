@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #020024 10%, #090979 40%, #00d4ff 100%);
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+.cyber-container {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.neon-text h1 {
+  font-size: 3rem;
+  color: #00fff7;
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00f6ff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.neon-text p {
+  font-size: 1.2rem;
+  color: #ff007a;
+  text-shadow: 0 0 5px #ff007a, 0 0 10px #ff007a, 0 0 20px #ff007a, 0 0 40px #ff007a;
+}
+
+.glow-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 2px,
+      transparent 2px,
+      transparent 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 2px,
+      transparent 2px,
+      transparent 50px
+    );
+  z-index: 1;
+  animation: gridMove 5s linear infinite;
+}
+
+.circuits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.imgur.com/FZuqmPe.png') repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: -50px -50px, -50px -50px;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00f6ff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 3px #00fff7, 0 0 8px #00fff7, 0 0 16px #00fff7, 0 0 32px #00f6ff;
+    opacity: 0.8;
+  }
+}
+
